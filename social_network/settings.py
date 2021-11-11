@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'posts',
     'about',
 
-    'base.apps.BaseConfig',
+#    'base.apps.BaseConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
