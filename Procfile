@@ -1,1 +1,1 @@
-web: gunicorn stefan.wsgi --log-file -
+web: gunicorn social_network.wsgi --log-file -
