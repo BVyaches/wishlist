@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Последние обновления на сайте{% endblock %}
+{% block header %}Последние обновления на сайте{% endblock %}
+{% block content %}
+
+
+{% for post in page %}
+<h3>
+
+    Автор: <a href="/{{ post.author.username }}/"> {{ post.author.username }} </a><br>
+    {{ post.author.get_full_name }}, Дата публикации: {{ post.pub_date|date:"d M Y" }},
+    Группа: {{ post.group }}
+</h3>
+<p>{{ post.text|linebreaksbr }}</p>
+{% if not forloop.last %}
+<hr>{% endif %}
+{% endfor %}
+{% include "paginator.html" %}
+
+{% endblock %}
+

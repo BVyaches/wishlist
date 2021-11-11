@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Желания{% endblock %}
+{% block header %}Желания{% endblock %}
+{% block content %}
+
+
+{% for post in page %}
+<h3>
+    <a href="/{{ post.author.username }}/{{ post.id }}" role="button"> {{ post.name }} </a><br>
+    Автор: <a href="/{{ post.author.username }}/"> {{ post.author.username }} </a><br>
+
+</h3>
+<p>{{ post.text|linebreaksbr }}</p>
+{% if not forloop.last %}
+<hr>{% endif %}
+{% endfor %}
+{% include "paginator.html" %}
+
+{% endblock %}
