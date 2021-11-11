@@ -1,0 +1,1 @@
+web: gunicorn stefan.wsgi --log-file -
