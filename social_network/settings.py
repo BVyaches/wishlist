@@ -31,7 +31,8 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     '[::1]',
     'testserver',
-    'wishlist113'
+    'wishlist113',
+    'wishlist113.herokuapp.com',
 ]
 
 # Application definition
