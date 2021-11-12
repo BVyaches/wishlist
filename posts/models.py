@@ -19,7 +19,8 @@ class Group(models.Model):
 class Post(models.Model):
 	name = models.TextField(help_text='Ваше желание', verbose_name='Желание')
 	description = models.TextField(help_text='Введите описание желания',
-	                               verbose_name='Описание', blank=False, null=False)
+	                               verbose_name='Описание', blank=False,
+	                               null=False)
 	website = models.URLField(help_text='Скопируйте ссылку на желание',
 	                          verbose_name='Ссылка', blank=True, null=True)
 	pub_date = models.DateTimeField('date published', auto_now_add=True)
