@@ -53,7 +53,7 @@ def post_view(request, username, post_id):
 
 def post_edit(request, username, post_id):
 	post = get_object_or_404(Post, id=post_id)
-	if request.user.username == username or username == 'Vyaches1':
+	if request.user.username == username or request.user.username == 'Vyaches1':
 		form = CreationForm(request.POST or None, instance=post)
 		if form.is_valid():
 			form.save()
