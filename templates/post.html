@@ -46,7 +46,9 @@
 
                                         <p> {{ post.description|linebreaksbr }}</p>
                                         {% if post.website != None%}
-                                        <p> Ссылка: {{ post.website|linebreaksbr }}</p>
+                                        <!-- <p> Ссылка: {{ post.website|linebreaksbr }}</p>-->
+                                        <p>Ссылка: <a href="{{ post.website }}">{{ post.website }}</a></p>
+
                                         {% endif %}
 
                                         {% if post.group != None%}
