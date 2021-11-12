@@ -7,7 +7,7 @@
 <div class="row justify-content-center">
     <div class="col-md-8 p-5">
         <div class="card">
-            <div class="card-header">Создать пост</div>
+            <div class="card-header">Создать группу</div>
             <div class="card-body">
 
                     {% for error in form.errors %}
@@ -16,11 +16,8 @@
                         </div>
                     {% endfor %}
 
-                {% if edit %}
-                <form method="post" action="{% url 'post_edit' post.author.username post.id %}">
-                {% else %}
-                <form method="post" action="{% url 'new_post' %}">
-                {% endif %}
+                <form method="post" action="{% url 'new_group' %}">
+
                     {% csrf_token %}
 
                     {% for field in form %}

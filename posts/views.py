@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, redirect
 
-from .forms import CreationForm
+from .forms import CreationForm, CreationForm1
 from .models import Post, Group, User
 
 
@@ -34,6 +34,16 @@ def new_post(request):
 		form.save()
 		return redirect('index')
 	return render(request, 'new.html', {'form': form, 'edit': False})
+
+
+def new_group(request):
+	form = CreationForm1(request.POST or None)
+
+	if form.is_valid():
+		form.instance.author = request.user
+		form.save()
+		return redirect('index')
+	return render(request, 'new_group.html', {'form': form,})
 
 
 def profile(request, username):

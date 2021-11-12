@@ -45,8 +45,13 @@
                                         <!-- Текст поста -->
 
                                         <p> {{ post.description|linebreaksbr }}</p>
+                                        {% if post.website != None%}
+                                        <p> Ссылка: {{ post.website|linebreaksbr }}</p>
+                                        {% endif %}
 
-                                        <p> Ссылка (если есть): {{ post.website|linebreaksbr }}</p>
+                                        {% if post.group != None%}
+                                        <p> Дата: {{ post.group.description|linebreaksbr }}</p>
+                                        {% endif %}
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group ">
